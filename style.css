@@ -18,7 +18,7 @@ body { background-color: var(--bg-color); color: var(--heading-color); line-heig
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-.section-padding { padding: 100px 0; }
+.section-padding { padding: 50px 0; }
 .text-center { text-align: center; }
 .mb-5 { margin-bottom: 3rem; } .mb-4 { margin-bottom: 1.5rem; }
 
@@ -153,4 +153,55 @@ footer { background: var(--heading-color); color: var(--bg-color); padding: 80px
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/* --- HIGHLIGHT SECTION (1 Video + 2 Reels) --- */
+.highlight-grid {
+    display: grid;
+    /* Ubah baris ini 👇 */
+    grid-template-columns: 3fr 1fr; 
+    gap: 100px;
+    align-items: center;
+}
+
+/* Video Utama (Landscape 16:9) */
+.highlight-main {
+    position: relative;
+    width: 105%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Reels (Portrait 9:16) */
+.highlight-reel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #000;
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.highlight-grid iframe { width: 100%; height: 100%; object-fit: cover; }
+
+/* Label Video */
+.video-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(0, 0, 0, 0.7); color: #fff;
+    padding: 10px; font-size: 0.85rem; font-weight: 600;
+    text-align: center; backdrop-filter: blur(4px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .highlight-grid {
+        grid-template-columns: 1fr; /* Jadi satu baris memanjang ke bawah */
+        gap: 30px;
+    }
+    /* Di mobile, kita ubah Reel jadi petak sikit (4:5) supaya tak terlalu panjang */
+    .highlight-reel { aspect-ratio: 4 / 5; }
 }
