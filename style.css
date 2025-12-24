@@ -3,13 +3,12 @@
 
 /* --- FIX SCROLL POSITION --- */
 html {
-    scroll-behavior: smooth; /* Supaya dia gelongsor perlahan, bukan melompat */
+    scroll-behavior: smooth; /* Scroll perlahan, tak melompat */
 }
 
 section {
-    /* Ini rahsianya: */
-    /* Kita paksa browser berhenti 120px lebih awal dari garisan atas */
-    /* (Tinggi Navbar 80px + Top Gap 20px + Extra Nafas 20px) */
+    /* Paksa browser berhenti 120px lebih awal dari garisan atas */
+    /* (Tinggi Navbar 80px + Top Gap 20px + Extra ruang 20px) */
     scroll-margin-top: 120px;
 }
 
@@ -214,7 +213,7 @@ footer { background: var(--heading-color); color: var(--bg-color); padding: 80px
         grid-template-columns: 1fr; /* Jadi satu baris memanjang ke bawah */
         gap: 30px;
     }
-    /* Di mobile, kita ubah Reel jadi petak sikit (4:5) supaya tak terlalu panjang */
+    /* Ubah Reel jadi petak sikit (4:5) supaya tak terlalu panjang */
     .highlight-reel { aspect-ratio: 4 / 5; }
 }
 
